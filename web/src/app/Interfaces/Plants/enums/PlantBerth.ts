@@ -1,0 +1,6 @@
+export enum PlantBerth {
+  FULL_SUN = "FULL_SUN",
+  PARTIAL_SUN = "PARTIAL_SUN",
+  SHADE = "SHADE",
+  INDIRECT_SUNLIGHT = "INDIRECT_SUNLIGHT"
+}

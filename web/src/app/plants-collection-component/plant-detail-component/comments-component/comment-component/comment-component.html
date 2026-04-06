@@ -1,0 +1,46 @@
+<div class="card-body p-4">
+  <div class="d-flex flex-start">
+    <img
+      class="rounded-circle shadow-1-strong me-3"
+      [src]="avatarPath"
+      alt="avatar"
+      width="60"
+      height="60" />
+    <div>
+      <div class="d-flex align-items-center">
+        <div>
+          <span class="fw-bold me-2">
+            {{plantComment.user.username}}
+          </span>
+
+          @if (authService.getUer.username === plantComment.user.username) {
+            <button type="button" class="btn btn-sm btn-round btn-edit icon-hover" (click)="editComment()">
+              <i class="bi bi-pencil icon-empty"></i>
+              <i class="bi bi-pencil-fill icon-fill"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-round btn-edit icon-hover" (click)="removeComment()">
+              <i class="bi bi-trash icon-empty"></i>
+              <i class="bi bi-trash-fill icon-fill"></i>
+            </button>
+          }
+        </div>
+
+        <div class="ms-auto text-muted small text-nowrap">
+          <span>
+            {{'collections.plants.details.comments.comment.createdAt' | translate }}:
+            {{plantComment.creationDate | date:'dd.MM.yyyy HH:mm'}}
+          </span>
+
+          @if (plantComment.editDate) {
+            <span class="ms-3"> {{'collections.plants.details.comments.comment.editedAt' | translate }}:
+              {{plantComment.editDate | date:'dd.MM.yyyy HH:mm'}} </span>
+          }
+        </div>
+      </div>
+
+      <p class="mb-0">
+        {{plantComment.comment}}
+      </p>
+    </div>
+  </div>
+</div>

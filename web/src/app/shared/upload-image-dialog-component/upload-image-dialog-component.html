@@ -1,0 +1,37 @@
+<div class="modal-content">
+  <div class="modal-header d-flex align-items-center">
+    <h5 class="modal-title">{{modalTitle | translate}}</h5>
+    <div class="ms-auto d-flex gap-2">
+      <button
+        type="button"
+        class="btn btn-action"
+        (click)="save()">
+          {{'shared.uploadPhoto.upload' | translate}}
+      </button>
+      <button
+        type="button"
+        class="btn-close"
+        [attr.aria-label]="'shared.uploadPhoto.close' | translate"
+        (click)="close()">
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <input
+      type="file"
+      class="form-control"
+      accept="image/*"
+      (change)="onFileSelected($event)">
+
+    @if (previewUrl) {
+      <div class="mt-3 text-center">
+        <img [src]="previewUrl"
+             class="img-fluid shadow-sm imagePreview"
+             [ngClass]="circled ? 'rounded-circle' : ''"
+             alt="{{'shared.uploadPhoto.alt' | translate}}"
+             fill>
+      </div>
+    }
+  </div>
+</div>

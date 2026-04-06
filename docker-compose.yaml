@@ -33,10 +33,9 @@ services:
   yapo-django:
     restart: unless-stopped
     build:
-      context: .
-      dockerfile: dockerfiles/django.dockerfile
+      context: api
     volumes:
-      - ./src:/usr/src/app:rw
+      - ./api/:/usr/src/app:rw
     ports:
       - "8000:8000"
     depends_on:
@@ -55,11 +54,10 @@ services:
   yapo-celery-worker:
     restart: unless-stopped
     build:
-      context: .
-      dockerfile: dockerfiles/django.dockerfile
+      context: api
     command: celery -A YAPO worker -l info
     volumes:
-      - ./src:/usr/src/app:rw
+      - ./api/:/usr/src/app:rw
     depends_on:
       - yapo-django
     env_file:
@@ -69,14 +67,26 @@ services:
       - ./env/celery.env
     container_name: YAPO-celery-worker
 
+  yapo-web:
+    image: yapo-web:latest
+    build:
+      context: web
+    container_name: "yapo-web"
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - ./web:/project
+      - /project/node_modules
+
   yapo-celery-beat:
     restart: unless-stopped
     build:
-      context: .
-      dockerfile: dockerfiles/django.dockerfile
+      context: api
     command: celery -A YAPO beat -l info
     volumes:
-      - ./src:/usr/src/app:rw
+      - ./api/:/usr/src/app:rw
     depends_on:
       - yapo-django
     env_file:

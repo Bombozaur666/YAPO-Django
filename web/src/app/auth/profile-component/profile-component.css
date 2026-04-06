@@ -1,0 +1,10 @@
+.avatar {
+  width: 250px !important;
+  height: 250px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+}
+
+.container {
+  color: var(--color-white);
+}

@@ -1,0 +1,359 @@
+{
+  "app": {
+    "title":{
+      "short": "YAPO",
+      "full": "YAPO - Yet Another Plant Organiser"
+    }
+  },
+  "menu": {
+    "home": "Strona Główna",
+    "collection": "Kolekcja",
+    "localizations": "Lokalizacje",
+    "language": {
+      "general": "Języki"
+    },
+    "user": {
+      "login": "Zaloguj się",
+      "register": "Zarejestruj się",
+      "logout": "Wyloguj się",
+      "profile": "Profil"
+    }
+  },
+  "errors": {
+    "ErrorList": {
+      "WRONG_FIELD_TO_UPDATE": "Nieprawidłowe pole do zaktualizowania",
+      "ERROR_DURING_DATABASE_SAVING": "Błąd podczas zapisywania w bazie danych",
+      "LOCALIZATION_NOT_FOUND": "Lokalizacja nie znaleziona",
+      "USER_NOT_FOUND": "Użytkownik nie znaleziony",
+      "PLANT_NOT_FOUND": "Roślina nie znaleziona",
+      "COMMENT_NOT_FOUND": "Komentarz nie znaleziony",
+      "PHOTO_NOT_FOUND": "Zdjęcie nie znalezione",
+      "USERNAME_OR_EMAIL_ALREADY_IN_USE": "Nazwa użytkownika lub email jest już w użyciu",
+      "UNEXPECTED_ERROR_DURING_DELETE": "Niespodziewany błąd podczas usuwania",
+      "VALIDATION_ERROR": "Błąd walidacji",
+      "ERROR_DURING_SENDING_MAIL": "Błąd podczas wysyłania wiadomości email",
+      "INVALID_TOKEN": "Nieprawidłowy token",
+      "TOKEN_EXPIRED": "Token wygasł",
+      "PLANT_NOT_SHARED_OR_NOT_EXIST": "Roślina nie jest udostępniona lub nie istnieje"
+    }
+  },
+  "loginPage": {
+    "register": "Zarejestruj się",
+    "login": "Zaloguj się",
+    "title": "Logowanie",
+    "password": {
+      "password": "Hasło",
+      "isRequired": "Hasło nie może być puste!"
+    },
+    "email": {
+      "email": "Email",
+      "isRequired": "Email nie może być pusty!"
+    },
+    "username": {
+      "username": "Nazwa użytkownika",
+      "isRequired": "Nazwa użytkownika nie może być pusta!"
+    },
+    "forgotPassword": {
+      "title": "Zapomniałem hasła",
+      "success": "Pomyślna zmiana hasła!",
+      "failure": "Nie udało się zmienić hasła. Sprawdź czy nie dostałeś/aś wczesniej mail",
+      "reset": "Zresetuj hasło"
+    }
+  },
+  "profile": {
+    "profile": "Profil użytkownika",
+    "username": "Nazwa użytkownika: ",
+    "email": "Email: ",
+    "registrationDate": "Data rejestracji: ",
+    "settings": {
+      "editAvatar": "Edytuj Awatar",
+      "editAvatarTitle": "Wybierz zdjęcie",
+      "avatarAlt": "Awatar użytkownika"
+    }
+  },
+  "fetching": "Pobieram dane...",
+  "copied": "Skopiowano",
+  "shared": {
+    "uploadPhoto": {
+      "close": "Zamknij",
+      "cancel": "Anuluj",
+      "upload": "Wgraj",
+      "alt": "Podgląd wgranego zdjęcia"
+    },
+    "alerts": {
+      "footerButtons": {
+        "close": "Zamknij",
+        "ok": "OK"
+      }
+    }
+  },
+  "collections": {
+    "loading": "Pobieranie danych...",
+    "localizations": {
+      "addLocalization": "Dodaj lokalizację",
+      "editLocalization": "Edytuj lokalizację",
+      "modal": {
+        "name": "Nazwa",
+        "remove": "Usuń",
+        "close": "Zamknij",
+        "save": "Zapisz",
+        "cancel": "Anuluj"
+      }
+    },
+    "plants": {
+      "addPlant": "Dodaj roślinę",
+      "alt": "Miniaturka rośliny ",
+      "details": {
+        "true": "Tak",
+        "false": "Nie",
+        "name": "Imię",
+        "species": "Gatunek",
+        "purchaseDate": "Data zakupu",
+        "purchaseLocalization": "Miejsce zakupu",
+        "fertilizationDate": "Data nawożenia",
+        "alive": "Czy żyje",
+        "shared": "Czy udostępniona",
+        "avatarPath": "Awatar rośliny",
+        "wateringDate": "Data podlewania",
+        "deathReason": "Powód śmierci",
+        "plantCondition": "Stan rośliny",
+        "plantSoil": "Gleba",
+        "plantWatering": "Podlewanie",
+        "plantBerth": "Stanowisko",
+        "plantToxicity": "Stopień zagrożenia",
+        "plantLifeExpectancy": "Spodziewana długość życia",
+        "plantConditionValues": {
+          "HEALTHY": "Zdrowa",
+          "NEEDS_WATER": "Potrzebuje wody",
+          "NEEDS_SUNLIGHT": "Potrzebuje światła",
+          "NEEDS_FERTILIZER": "Potrzebuje nawozu",
+          "DIEBACK": "Umiera",
+          "INFESTED": "Zaatakowana przez szkodniki",
+          "DISEASED": "Zainfekowana",
+          "STRESSED": "Zestresowana",
+          "FUCK_THIS_SHIT_IM_OUT": "Roślina postanowała umrzeć",
+          "null": ""
+        },
+        "plantSoilValues": {
+          "POTTING_SOIL": "Ziemia doniczkowa",
+          "UNIVERSAL_SOIL": "Ziemia uniwersalna",
+          "PEAT_SOIL": "Ziemia torfowa",
+          "SANDY_SOIL": "Gleba piaszczysta",
+          "LOAMY_SOIL": "Gleba gliniasto-piaszczysta",
+          "CLAY_SOIL": "Gleba gliniasta",
+          "COMPOST_SOIL": "Ziemia kompostowa",
+          "CACTUS_SOIL": "Ziemia do kaktusów",
+          "HERB_SOIL": "Ziemia do ziół",
+          "VEGETABLE_SOIL": "Ziemia do warzyw",
+          "ACIDIC_SOIL": "Gleba kwaśna",
+          "ALKALINE_SOIL": "Gleba zasadowa",
+          "NEUTRAL_SOIL": "Gleba obojętna",
+          "PERLITE_MIX": "Mieszanka z perlitem",
+          "COCONUT_SUBSTRATE": "Włókno kokosowe",
+          "ORCHID_SOIL": "Ziemia do storczyków",
+          "null": ""
+        },
+        "plantWateringValues": {
+          "DAILY": "Codziennie",
+          "EVERY_2_DAYS": "Co 2 dni",
+          "TWO_TIMES_A_WEEK": "Dwa razy w tygodniu",
+          "WEEKLY": "Co tydzień",
+          "MONTHLY": "Co miesiąc",
+          "WHEN_NEEDED": "Kiedy potrzeba",
+          "null": ""
+        },
+        "plantBerthValues": {
+          "FULL_SUN": "Pełne słońce",
+          "PARTIAL_SUN": "Częściowe słońce",
+          "SHADE": "Cień",
+          "INDIRECT_SUNLIGHT": "Pośrednie światło",
+          "null": ""
+        },
+        "plantToxicityValues": {
+          "NON_TOXIC": "Nietoksyczna",
+          "TOXIC_TO_HUMANS": "Toksyczna dla ludzi",
+          "TOXIC_TO_ANIMALS": "Toksyczna dla zwierząt",
+          "TOXIC_TO_HUMANS_AND_ANIMALS": "Toksyczna dla ludzi i zwierząt",
+          "null": ""
+        },
+        "plantLifeExpectancyValues": {
+          "ANNUAL": "Jednoroczna",
+          "PERENNIAL": "Wieloletnia",
+          "null": ""
+        },
+        "updateField": {
+          "close": "Zamknij",
+          "save": "Zaktualizuj",
+          "cancel": "Anuluj"
+        },
+        "notes": {
+          "noNotes": "Brak notatek",
+          "note": {
+            "id": "NP",
+            "body": "Treść",
+            "noteDate": "Data utworzenia",
+            "editDate": "Data edycji",
+            "utility": {
+              "title": "Opcje",
+              "delete": "Usuń",
+              "edit": "Edytuj"
+            }
+          },
+          "title": "Notatki",
+          "addNote": "Dodaj notatkę",
+          "noteModal": {
+            "addNote": "Dodaj notatke",
+            "editNote": "Edytuj notatke",
+            "body": "Treść",
+            "close": "Zamknij",
+            "save": "Zapisz",
+            "cancel": "Anuluj"
+          }
+        },
+        "photoGallery": {
+          "title": "Galeria",
+          "addPhoto": "Dodaj zdjęcie",
+          "noPhotos": "Brak zdjęć",
+          "modal": {
+            "title": "Dodaj zdjęcie",
+            "titlePhoto": "Tytuł",
+            "datePhoto": "Data",
+            "descriptionPhoto": "Opis",
+            "filePhoto": "Plik"
+          },
+          "fullPhoto": {
+            "title": "Tytuł: ",
+            "date": "Data: ",
+            "creationDate": "Data dodania: ",
+            "description": "Opis: ",
+            "close": "Zamknij",
+            "deletePhoto": "Usuń zdjęcie",
+            "downloadPhoto": "Pobierz zdjęcie",
+            "nextPhoto": "Nastepne zdjęcie",
+            "prevPhoto": "Poprzednie zdjęcie"
+          }
+        },
+        "updates": {
+          "title": "Historia zmian",
+          "id": "id",
+          "fieldName": "Pole",
+          "oldValue": "Stara wartość",
+          "newValue": "Nowa wartość"
+        },
+        "avatarModal": {
+          "editAvatar": "Edytuj Awatar"
+        },
+        "deletePlant": "Usuń roślinę",
+        "comments": {
+          "title": "Komentarze",
+          "addComment": "Dodaj komentarz",
+          "noComments": "Brak komentarzy",
+          "comment": {
+            "createdAt": "Dodano",
+            "editedAt": "Edytowano"
+          }
+        }
+      },
+      "modal": {
+        "close": "Zamknij",
+        "save": "Zapisz",
+        "cancel": "Anuluj"
+      }
+    }
+  },
+  "pagination": {
+    "5": "5 pozycji na stronę.",
+    "10": "10 pozycji na stronę.",
+    "20": "20 pozycji na stronę.",
+    "all": "Wszystkie"
+  },
+  "alerts": {
+    "deletePlant": {
+      "title": "Usuniecie rośliny",
+      "text": "Czy na pewno chcesz usunać rośline?",
+      "confirmButton": "Tak",
+      "cancelButton": "Nie",
+      "successTitle": "Sukces",
+      "successText": "Poprawnie usunieto roślinę",
+      "failureSuccess": "Błąd",
+      "failureText": "Nie udało się usunąć rośliny. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "noteDelete": {
+      "title": "Usuniecie notatki",
+      "text": "Czy na pewno chcesz usunąć notatkę?",
+      "confirmButton": "Tak",
+      "cancelButton": "Nie",
+      "successTitle": "Sukces",
+      "successText": "Poprawnie usunięto notatkę",
+      "failureSuccess": "Błąd",
+      "failureText": "Nie udało się usunąć notatkę. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "addNote": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się dodać notatki. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "changeNote": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się zaktualizować notatki. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "localizationDelete": {
+      "title": "Usuniecie Lokalizacji",
+      "text": "Czy na pewno chcesz usunąć lokalizację?",
+      "confirmButton": "Tak",
+      "cancelButton": "Nie",
+      "successTitle": "Sukces",
+      "successText": "Poprawnie usunięto lokalizację",
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się usunąć lokalizacji. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "dataFetching": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się pobrać danych. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "uploadPlant": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się utworzyć rosliny. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "updatePlant": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się zaktualizować pola. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "uploadPhoto": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się wgrać zdjęcia. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "login": {
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się zalogować. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "register": {
+      "confirmButton": "Tak",
+      "cancelButton": "Nie",
+      "successTitle": "Pomyślna rejestracja.",
+      "successText": "Teraz proszę potwierdzić email.",
+      "failureTitle": "Błąd",
+      "failureText": "Nie udało się zarejestrować. Proszę spróbować później.",
+      "ok": "Ok"
+    },
+    "confirmAccount": {
+      "confirmButton": "Tak",
+      "cancelButton": "Nie",
+      "successTitle": "Pomyślna rejestracja.",
+      "successText": "Konto aktywne. Można się zalogować",
+      "failureTitle": "Błąd",
+      "failureTextToken": "Niepoprawny link aktywacyjny",
+      "failureText": "Nie udało się potwierdzić konta. Spróbuj ponownie później.",
+      "ok": "Ok"
+    }
+  }
+}

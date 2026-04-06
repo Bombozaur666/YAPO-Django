@@ -1,0 +1,63 @@
+<div class="modal-content">
+  <div class="modal-header d-flex align-items-center">
+    <h5 class="modal-title" id="uploadImageModalLabel">{{'collections.plants.details.photoGallery.modal.title' | translate}}</h5>
+    <div class="ms-auto d-flex gap-2">
+      <button
+        type="button"
+        class="btn btn-action"
+        (click)="save()">
+        {{'shared.uploadPhoto.upload' | translate}}
+      </button>
+      <button
+        type="button"
+        class="btn-close"
+        [attr.aria-label]="'shared.uploadPhoto.close' | translate"
+        (click)="close()">
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <label for="titlePhoto">{{'collections.plants.details.photoGallery.modal.titlePhoto' | translate}}</label>
+    <input
+      type="text"
+      id="titlePhoto"
+      class="form-control m-1"
+      [(ngModel)]="photoGalleryRequest.title">
+
+    <label for="datePhoto">{{'collections.plants.details.photoGallery.modal.datePhoto' | translate}}</label>
+    <input
+      type="date"
+      id="datePhoto"
+      class="form-control m-1"
+      [(ngModel)]="photoGalleryRequest.date"
+      label="date">
+
+    <label for="descriptionPhoto">{{'collections.plants.details.photoGallery.modal.descriptionPhoto' | translate}}</label>
+    <input
+      type="text"
+      id="descriptionPhoto"
+      class="form-control m-1"
+      [(ngModel)]="photoGalleryRequest.description"
+      label="description">
+
+    <label for="filePhoto">{{'collections.plants.details.photoGallery.modal.filePhoto' | translate}}</label>
+    <input
+      type="file"
+      id="filePhoto"
+      class="form-control m-1"
+      accept="image/*"
+      required
+      (change)="onFileSelected($event)">
+
+    @if (previewUrl) {
+      <div class="mt-3 text-center">
+        <img [src]="previewUrl"
+             class="img-fluid shadow-sm imagePreview"
+             [ngClass]="circled ? 'rounded-circle' : ''"
+             alt="{{'shared.uploadPhoto.alt' | translate}}"
+             fill>
+      </div>
+    }
+  </div>
+</div>

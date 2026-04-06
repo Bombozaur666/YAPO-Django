@@ -1,0 +1,8 @@
+export enum PlantWatering {
+  DAILY = "DAILY",
+  EVERY_2_DAYS = "EVERY_2_DAYS",
+  TWO_TIMES_A_WEEK = "TWO_TIMES_A_WEEK",
+  WEEKLY = "WEEKLY",
+  MONTHLY = "MONTHLY",
+  WHEN_NEEDED = "WHEN_NEEDED"
+}

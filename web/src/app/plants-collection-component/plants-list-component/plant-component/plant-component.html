@@ -1,0 +1,17 @@
+<div
+  class="card text-center"
+  [class.active]="selectedPlant === plant.id"
+  (click)="selectPlant()">
+  <div>
+    <img
+      class="plant-img"
+      [src]="avatarPath"
+      alt="{{'collections.plants.alt' | translate}} {{plant.name}}"
+      fill>
+  </div>
+  <div class="card-title plant-text">
+    {{plant.name}}
+  </div>
+</div>
+
+

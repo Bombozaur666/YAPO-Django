@@ -1,0 +1,63 @@
+<div class="card mt-5">
+  <div class="card-header">
+    <h3>
+      {{'collections.plants.details.notes.title' | translate }}
+
+      <button
+        type="button"
+        class="btn btn-sm btn-action m-1 float-end"
+        (click)="addNote()">
+        {{'collections.plants.details.notes.addNote' | translate }}
+      </button>
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive w-100">
+      <table class="table table-dark table-hover table-striped table-borderless">
+        <thead>
+        <tr>
+          <th style="width: 16%">{{ 'collections.plants.details.notes.note.noteDate' | translate }}</th>
+          <th style="width: 16%">{{ 'collections.plants.details.notes.note.editDate' | translate }}</th>
+          <th style="width: 52%">{{ 'collections.plants.details.notes.note.body' | translate }}</th>
+          <th class="text-end" style="width: 16%">{{ 'collections.plants.details.notes.note.utility.title' | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (
+            note of notes
+              | slice:(page-1)*pageSize:(page-1)*pageSize+pageSize;
+            track note.id
+            ) {
+            <tr
+              app-note-component
+              [note]="note"
+              (noteChanged)="onNoteChange($event)"
+              (noteDelete)="onNoteDelete($event)">
+            </tr>
+          } @empty {
+            {{ 'collections.plants.details.notes.noNotes' | translate }}
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="notes.length"
+        [maxSize]="5"
+        [boundaryLinks]="true"
+        size="sm">
+      </ngb-pagination>
+
+      <select class="form-select" [(ngModel)]="pageSize">
+        <option [ngValue]="5">{{'pagination.5' | translate}}</option>
+        <option [ngValue]="10">{{'pagination.10' | translate}}</option>
+        <option [ngValue]="20">{{'pagination.20' | translate}}</option>
+        <option [ngValue]="notes.length">{{'pagination.all' | translate}}</option>
+      </select>
+    </div>
+  </div>
+</div>

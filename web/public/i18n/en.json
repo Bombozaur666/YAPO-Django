@@ -1,0 +1,294 @@
+{
+  "app": {
+    "title": {
+      "short": "YAPO",
+      "full": "YAPO - Yet Another Plant Organiser"
+    }
+  },
+  "menu": {
+    "home": "Home",
+    "collection": "Collection",
+    "localizations": "Localizations",
+    "language": {
+      "general": "Languages"
+    },
+    "user": {
+      "login": "Log in",
+      "register": "Register",
+      "logout": "Log out",
+      "profile": "Profile"
+    }
+  },
+  "errors": {
+    "ErrorList": {
+      "WRONG_FIELD_TO_UPDATE": "Invalid field to update",
+      "ERROR_DURING_DATABASE_SAVING": "Error while saving to the database",
+      "LOCALIZATION_NOT_FOUND": "Localization not found",
+      "USER_NOT_FOUND": "User not found",
+      "PLANT_NOT_FOUND": "Plant not found",
+      "COMMENT_NOT_FOUND": "Comment not found",
+      "PHOTO_NOT_FOUND": "Photo not found",
+      "USERNAME_OR_EMAIL_ALREADY_IN_USE": "Username or email is already in use",
+      "UNEXPECTED_ERROR_DURING_DELETE": "Unexpected error while deleting",
+      "VALIDATION_ERROR": "Validation error",
+      "ERROR_DURING_SENDING_MAIL": "Error while sending email",
+      "INVALID_TOKEN": "Invalid token",
+      "TOKEN_EXPIRED": "Token expired",
+      "PLANT_NOT_SHARED_OR_NOT_EXIST": "Plant is not shared or does not exist"
+    }
+  },
+  "loginPage": {
+    "register": "Register",
+    "login": "Log in",
+    "title": "Login",
+    "password": {
+      "password": "Password",
+      "isRequired": "Password cannot be empty!"
+    },
+    "email": {
+      "email": "Email",
+      "isRequired": "Email cannot be empty!"
+    },
+    "username": {
+      "username": "Username",
+      "isRequired": "Username cannot be empty!"
+    },
+    "forgotPassword": {
+      "title": "Forgot password",
+      "success": "Password successfully changed!",
+      "failure": "Password change failed. Check if you received an email earlier",
+      "reset": "Reset password"
+    }
+  },
+  "profile": {
+    "profile": "User profile",
+    "username": "Username: ",
+    "email": "Email: ",
+    "registrationDate": "Registration date: ",
+    "settings": {
+      "editAvatar": "Edit Avatar",
+      "editAvatarTitle": "Choose a picture",
+      "avatarAlt": "User avatar"
+    }
+  },
+  "fetching": "Fetching data...",
+  "copied": "Copied",
+  "shared": {
+    "uploadPhoto": {
+      "close": "Close",
+      "cancel": "Cancel",
+      "upload": "Upload",
+      "alt": "Uploaded photo preview"
+    },
+    "alerts": {
+      "footerButtons": {
+        "close": "Close",
+        "ok": "OK"
+      }
+    }
+  },
+  "collections": {
+    "loading": "Fetching data...",
+    "localizations": {
+      "addLocalization": "Add localization",
+      "editLocalization": "Edit localization",
+      "modal": {
+        "name": "Name",
+        "remove": "Remove",
+        "close": "Close",
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    },
+    "plants": {
+      "addPlant": "Add plant",
+      "alt": "Plant thumbnail ",
+      "details": {
+        "true": "Yes",
+        "false": "No",
+        "name": "Name",
+        "species": "Species",
+        "purchaseDate": "Purchase date",
+        "purchaseLocalization": "Purchase location",
+        "fertilizationDate": "Fertilization date",
+        "alive": "Is alive",
+        "shared": "Is shared",
+        "avatarPath": "Plant avatar",
+        "wateringDate": "Watering date",
+        "deathReason": "Cause of death",
+        "plantCondition": "Plant condition",
+        "plantSoil": "Soil",
+        "plantWatering": "Watering",
+        "plantBerth": "Placement",
+        "plantToxicity": "Toxicity",
+        "plantLifeExpectancy": "Life expectancy",
+        "plantConditionValues": {
+          "HEALTHY": "Healthy",
+          "NEEDS_WATER": "Needs water",
+          "NEEDS_SUNLIGHT": "Needs sunlight",
+          "NEEDS_FERTILIZER": "Needs fertilizer",
+          "DIEBACK": "Dying back",
+          "INFESTED": "Infested",
+          "DISEASED": "Diseased",
+          "STRESSED": "Stressed",
+          "FUCK_THIS_SHIT_IM_OUT": "The plant decided to die",
+          "null": ""
+        },
+        "plantSoilValues": {
+          "POTTING_SOIL": "Potting soil",
+          "UNIVERSAL_SOIL": "Universal soil",
+          "PEAT_SOIL": "Peat soil",
+          "SANDY_SOIL": "Sandy soil",
+          "LOAMY_SOIL": "Loamy soil",
+          "CLAY_SOIL": "Clay soil",
+          "COMPOST_SOIL": "Compost soil",
+          "CACTUS_SOIL": "Cactus soil",
+          "HERB_SOIL": "Herb soil",
+          "VEGETABLE_SOIL": "Vegetable soil",
+          "ACIDIC_SOIL": "Acidic soil",
+          "ALKALINE_SOIL": "Alkaline soil",
+          "NEUTRAL_SOIL": "Neutral soil",
+          "PERLITE_MIX": "Perlite mix",
+          "COCONUT_SUBSTRATE": "Coconut substrate",
+          "ORCHID_SOIL": "Orchid soil",
+          "null": ""
+        },
+        "plantWateringValues": {
+          "DAILY": "Daily",
+          "EVERY_2_DAYS": "Every 2 days",
+          "TWO_TIMES_A_WEEK": "Twice a week",
+          "WEEKLY": "Weekly",
+          "MONTHLY": "Monthly",
+          "WHEN_NEEDED": "When needed",
+          "null": ""
+        },
+        "plantBerthValues": {
+          "FULL_SUN": "Full sun",
+          "PARTIAL_SUN": "Partial sun",
+          "SHADE": "Shade",
+          "INDIRECT_SUNLIGHT": "Indirect sunlight",
+          "null": ""
+        },
+        "plantToxicityValues": {
+          "NON_TOXIC": "Non-toxic",
+          "TOXIC_TO_HUMANS": "Toxic to humans",
+          "TOXIC_TO_ANIMALS": "Toxic to animals",
+          "TOXIC_TO_HUMANS_AND_ANIMALS": "Toxic to humans and animals",
+          "null": ""
+        },
+        "plantLifeExpectancyValues": {
+          "ANNUAL": "Annual",
+          "PERENNIAL": "Perennial",
+          "null": ""
+        },
+        "updateField": {
+          "close": "Close",
+          "save": "Update",
+          "cancel": "Cancel"
+        },
+        "notes": {
+          "note": {
+            "id": "ID",
+            "body": "Content",
+            "noteDate": "Creation date",
+            "editDate": "Edit date",
+            "utility": {
+              "title": "Options",
+              "delete": "Delete",
+              "edit": "Edit"
+            }
+          },
+          "title": "Notes",
+          "addNote": "Add note",
+          "noteModal": {
+            "addNote": "Add note",
+            "editNote": "Edit note",
+            "body": "Content",
+            "close": "Close",
+            "save": "Save",
+            "cancel": "Cancel"
+          }
+        },
+        "photoGallery": {
+          "title": "Gallery",
+          "addPhoto": "Add photo",
+          "modal": {
+            "title": "Add photo",
+            "titlePhoto": "Title",
+            "datePhoto": "Date",
+            "descriptionPhoto": "Description",
+            "filePhoto": "File"
+          },
+          "fullPhoto": {
+            "title": "Title: ",
+            "date": "Date: ",
+            "creationDate": "Added on: ",
+            "description": "Description: ",
+            "close": "Close",
+            "deletePhoto": "Delete photo",
+            "downloadPhoto": "Download photo",
+            "nextPhoto": "Next photo",
+            "prevPhoto": "Previous photo"
+          }
+        },
+        "updates": {
+          "title": "Change history",
+          "id": "ID",
+          "fieldName": "Field",
+          "oldValue": "Old value",
+          "newValue": "New value"
+        },
+        "avatarModal": {
+          "editAvatar": "Edit Avatar"
+        },
+        "deletePlant": "Delete plant"
+      },
+      "modal": {
+        "close": "Close",
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    }
+  },
+  "pagination": {
+    "5": "5 items per page.",
+    "10": "10 items per page.",
+    "20": "20 items per page.",
+    "all": "All"
+  },
+  "alerts": {
+    "deletePlant": {
+      "title": "Delete plant",
+      "text": "Are you sure you want to delete the plant?",
+      "confirmButton": "Yes",
+      "cancelButton": "No",
+      "successTitle": "Success",
+      "successText": "Plant successfully deleted",
+      "failureSuccess": "Error",
+      "failureText": "Failed to delete the plant. Please try again later.",
+      "ok": "Ok"
+    },
+    "noteDelete": {
+      "title": "Delete note",
+      "text": "Are you sure you want to delete the note?",
+      "confirmButton": "Yes",
+      "cancelButton": "No",
+      "successTitle": "Success",
+      "successText": "Note successfully deleted",
+      "failureSuccess": "Error",
+      "failureText": "Failed to delete the note. Please try again later.",
+      "ok": "Ok"
+    },
+    "localizationDelete": {
+      "title": "Delete localization",
+      "text": "Are you sure you want to delete the localization?",
+      "confirmButton": "Yes",
+      "cancelButton": "No",
+      "successTitle": "Success",
+      "successText": "Localization successfully deleted",
+      "failureSuccess": "Error",
+      "failureText": "Failed to delete the localization. Please try again later.",
+      "ok": "Ok"
+    }
+  }
+}

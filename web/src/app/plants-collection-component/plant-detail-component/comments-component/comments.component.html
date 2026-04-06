@@ -1,0 +1,26 @@
+<div class="card mt-5 mb-5">
+  <div class="card-header">
+    <h3>
+      {{'collections.plants.details.comments.title' | translate }}
+
+      <button
+        type="button"
+        class="btn btn-sm btn-action m-1 float-end"
+        (click)="addComment()">
+        {{'collections.plants.details.comments.addComment' | translate }}
+      </button>
+    </h3>
+  </div>
+  <div class="card-body">
+    <div>
+      @for (comment of plantComments; track comment) {
+        <app-comment-component
+          [plantComment]="comment">
+        </app-comment-component>
+      } @empty {
+        {{'collections.plants.details.comments.noComments' | translate }}
+      }
+    </div>
+  </div>
+</div>
+

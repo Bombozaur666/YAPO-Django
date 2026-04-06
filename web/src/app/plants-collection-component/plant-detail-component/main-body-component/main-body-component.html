@@ -1,0 +1,373 @@
+<div class="card mt-2">
+  <div class="card-header">
+    <div class="row">
+      <div class="card-title">
+        <h2 class="d-flex align-items-center justify-content-between">
+          <span>
+            {{ plant.name }}
+            @if (editMode) {
+              <button
+                class="btn btn-sm btn-edit btn-round icon-hover"
+                (click)="updateField('name', plant.name, 'text')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+            </button>
+            }
+            <button
+              class="btn btn-sm btn-edit btn-round icon-hover"
+              (click)="sharePlant()"
+              ngbTooltip="{{'copied' | translate}}"
+              triggers="manual"
+              #sharePlantTooltip="ngbTooltip"
+              placement="bottom">
+               <i class="bi bi-share icon-empty"></i>
+               <i class="bi bi-share-fill icon-fill"></i>
+            </button>
+          </span>
+          @if (editMode) {
+            <span>
+            <button
+              type="button"
+              class="btn btn-sm btn-delete m-1"
+              (click)="onRemovePlant()">
+              {{'collections.plants.details.deletePlant' | translate }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-action m-1"
+              (click)="onAvatarEdit()">
+              {{'collections.plants.details.avatarModal.editAvatar' | translate }}
+            </button>
+          </span>
+          }
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row g-1">
+      <div class="col-8">
+        <div class="row"
+             [class.active]="selectedRow === 'species'"
+             (mouseenter)="selectedRow='species'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.species" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('species', plant.species, 'text')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ plant.species }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'purchaseDate'"
+             (mouseenter)="selectedRow='purchaseDate'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.purchaseDate" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('purchaseDate', plant.purchaseDate, 'date')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ plant.purchaseDate | date:'dd.MM.yyyy' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'purchaseLocalization'"
+             (mouseenter)="selectedRow='purchaseLocalization'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.purchaseLocalization" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('purchaseLocalization', plant.purchaseLocalization, 'text')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ plant.purchaseLocalization }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'fertilizationDate'"
+             (mouseenter)="selectedRow='fertilizationDate'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.fertilizationDate" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-round btn-edit icon-hover"
+                (click)="updateField('fertilizationDate', plant.fertilizationDate, 'date')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ plant.fertilizationDate | date:'dd.MM.yyyy'}}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'wateringDate'"
+             (mouseenter)="selectedRow='wateringDate'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.wateringDate" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('wateringDate', plant.wateringDate, 'date')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{plant.wateringDate | date:'dd.MM.yyyy'}}
+            </p>
+          </div>
+        </div>
+
+        @if(!plant.alive) {
+          <div class="row"
+               [class.active]="selectedRow === 'deathReason'"
+               (mouseenter)="selectedRow='deathReason'"
+               (mouseleave)="selectedRow = ''">
+            <div class="col-4">{{"collections.plants.details.deathReason" | translate}}</div>
+            @if (editMode) {
+              <div class="col-1">
+                <button
+                  class="btn btn-sm btn-round btn-edit icon-hover"
+                  (click)="updateField('deathReason', plant.deathReason, 'text')">
+                  <i class="bi bi-pencil icon-empty"></i>
+                  <i class="bi bi-pencil-fill icon-fill"></i>
+                </button>
+              </div>
+            }
+            <div class="col-7">
+              <p class="card-text">
+                {{ plant.deathReason }}
+              </p>
+            </div>
+          </div>
+        }
+
+        <div class="row"
+             [class.active]="selectedRow === 'plantWatering'"
+             (mouseenter)="selectedRow='plantWatering'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.plantWatering" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('plantWatering', plant.plantWatering, 'select', plantWatering)">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.plantWateringValues.${plant.plantWatering}` | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'plantSoil'"
+             (mouseenter)="selectedRow='plantSoil'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.plantSoil" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('plantSoil', plant.plantSoil, 'select', plantSoil)">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.plantSoilValues.${plant.plantSoil}` | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'plantCondition'"
+             (mouseenter)="selectedRow='plantCondition'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.plantCondition" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('plantCondition', plant.plantCondition, 'select', plantConditions)">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.plantConditionValues.${plant.plantCondition}` | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'plantBerth'"
+             (mouseenter)="selectedRow='plantBerth'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.plantBerth" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('plantBerth', plant.plantBerth, 'select', plantBerth)">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.plantBerthValues.${plant.plantBerth}` | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'plantToxicity'"
+             (mouseenter)="selectedRow='plantToxicity'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.plantToxicity" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('plantToxicity', plant.plantToxicity, 'select', plantToxicity)">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.plantToxicityValues.${plant.plantToxicity}` | translate}}
+            </p>
+          </div>
+        </div>
+
+
+        <div class="row"
+         [class.active]="selectedRow === 'plantLifeExpectancy'"
+         (mouseenter)="selectedRow='plantLifeExpectancy'"
+         (mouseleave)="selectedRow = ''">
+            <div class="col-4">{{"collections.plants.details.plantLifeExpectancy" | translate}}</div>
+            @if (editMode) {
+              <div class="col-1">
+                <button
+                  class="btn btn-sm btn-round btn-edit icon-hover"
+                  (click)="updateField('plantLifeExpectancy', plant.plantLifeExpectancy, 'select', plantLifeExpectancy)">
+                  <i class="bi bi-pencil icon-empty"></i>
+                  <i class="bi bi-pencil-fill icon-fill"></i>
+                </button>
+              </div>
+            }
+            <div class="col-7">
+              <p class="card-text">
+                {{`collections.plants.details.plantLifeExpectancyValues.${plant.plantLifeExpectancy}` | translate }}
+              </p>
+            </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'shared'"
+             (mouseenter)="selectedRow='shared'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.shared" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('shared', plant.shared, 'checkbox')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.${plant.shared}` | translate  }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row"
+             [class.active]="selectedRow === 'alive'"
+             (mouseenter)="selectedRow='alive'"
+             (mouseleave)="selectedRow = ''">
+          <div class="col-4">{{"collections.plants.details.alive" | translate}}</div>
+          @if (editMode) {
+            <div class="col-1">
+              <button
+                class="btn btn-sm btn-round btn-edit icon-hover"
+                (click)="updateField('alive', plant.alive, 'checkbox')">
+                <i class="bi bi-pencil icon-empty"></i>
+                <i class="bi bi-pencil-fill icon-fill"></i>
+              </button>
+            </div>
+          }
+          <div class="col-7">
+            <p class="card-text">
+              {{ `collections.plants.details.${plant.alive}` | translate  }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-4">
+        <div class="position-relative d-inline-block text-center">
+          <img
+            [src]="avatarPath"
+            class="avatarPlant"
+            alt="{{'collections.plants.details.avatarPath' | translate }}"
+          />
+        </div>
+      </div>
+   </div>
+  </div>
+</div>

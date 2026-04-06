@@ -1,0 +1,63 @@
+.card, .modal-content, .modal-body, .color-body, .custom-modal-body {
+  background-color: var(--main-secondary-color) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.card-header, .modal-header, .color-header, .custom-modal-header {
+  background-color: var(--main-active-color);
+  color: var(--color-white);
+}
+
+td .btn {
+  transition: all 0.2s ease;
+}
+
+tr { /* header row*/
+  --bs-table-accent-bg: var(--main-active-color) !important;
+}
+
+.table-hover tr { /* hover */
+  --bs-table-hover-bg: var(--table-higlite) !important;
+}
+
+tr:nth-of-type(odd) {/* odd rows */
+  --bs-table-striped-bg: var(--main-secondary-color) !important;
+}
+
+
+tr:nth-of-type(even) {/* even rows */
+  --bs-table-accent-bg: var(--main-active-color)  !important;
+}
+
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+  background-color: var(--main-secondary-color) !important;
+  outline: var(--color-black) !important;
+  color: var(--color-black) !important;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+  background-color: var(--main-active-color) !important;
+}
+
+
+select {
+  background-color: var(--main-secondary-color) !important;
+  overflow: hidden;
+  width: auto;
+}
+
+select.form-select {
+  background-color: var(--main-secondary-color) !important;
+  color: var(--color-black) !important;
+}
+
+select.form-select:focus {
+  border-color: var(--main-active-color) !important;
+  box-shadow: 1 var(--main-active-color) !important;
+}
+
+option:checked {
+  color: var(--color-white) !important;
+  background-color: var(--main-active-color) !important;
+}

@@ -1,0 +1,9 @@
+::ng-deep .modal-body {
+  padding: 5px;
+}
+
+select.form-select{
+  background-color: var(--color-white) !important;
+  overflow: hidden;
+  width: auto;
+}

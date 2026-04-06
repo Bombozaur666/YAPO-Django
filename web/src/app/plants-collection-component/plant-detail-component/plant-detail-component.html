@@ -1,0 +1,32 @@
+<div class="ml-1">
+  <app-main-body-component
+    [plant]="plant"
+    (plantAvatarChange)="onPlantAvatarChange($event)"
+    (removePlant)="onRemovePlant($event)"
+    (plantUpdate)="onPlantUpdate($event)"
+    [editMode]="true">
+  </app-main-body-component>
+
+  <app-notes-component
+    [notes]="plant.notes"
+    (notesChanged)="onNotesChange($event)"
+    [plantId]="plant.id">
+  </app-notes-component>
+
+  <app-comments-component
+    [plantId]="plant.id"
+    [plantComments]="plant.comments">
+  </app-comments-component>
+
+  <app-photo-gallery-component
+    [plantId]="plant.id"
+    [editing]="true"
+    (plantUpdate)="onPlantUpdate($event)"
+    [photoGallery]="plant.photoGallery"
+    (photoRemove)="onPhotoRemove($event)">
+  </app-photo-gallery-component>
+
+  <app-updates-component
+    [updates]="plant.plantHistory">
+  </app-updates-component>
+</div>

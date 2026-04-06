@@ -1,0 +1,46 @@
+<div class="card mt-5 mb-5">
+  <div class="card-header">
+    <h3>
+      {{'collections.plants.details.updates.title' | translate }}
+    </h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-dark table-hover table-striped table-borderless">
+      <thead>
+      <tr>
+        <th class="col-2">{{'collections.plants.details.updates.fieldName' | translate}}</th>
+        <th class="col-5">{{'collections.plants.details.updates.oldValue' | translate}}</th>
+        <th class="col-5">{{'collections.plants.details.updates.newValue' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (update of updates
+            | slice:(page-1)*pageSize:(page-1)*pageSize+pageSize;
+            track update.id) {
+          <tr
+            app-update-component
+            [update]="update">
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="updates.length"
+        [maxSize]="5"
+        [boundaryLinks]="true"
+        size="sm">
+      </ngb-pagination>
+
+      <select class="form-select" style="width: auto" [(ngModel)]="pageSize">
+        <option [ngValue]="5">{{'pagination.5' | translate}}</option>
+        <option [ngValue]="10">{{'pagination.10' | translate}}</option>
+        <option [ngValue]="20">{{'pagination.20' | translate}}</option>
+        <option [ngValue]="updates.length">{{'pagination.all' | translate}}</option>
+      </select>
+    </div>
+  </div>
+</div>

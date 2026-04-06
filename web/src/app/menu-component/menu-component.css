@@ -1,0 +1,12 @@
+.navbar-custom{
+  background-color: var(--menu-header-color)!important;
+  color: goldenrod !important;
+}
+
+.nav-item  {
+  color: goldenrod;
+}
+.navbar-brand {
+  color: gold;
+}
+

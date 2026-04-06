@@ -1,0 +1,85 @@
+<nav class="navbar navbar-custom navbar-expand ">
+  <div class="container-fluid d-flex">
+    <div class="text-start">
+      <button
+        type="button"
+        class="btn navbar-brand"
+        [class.active]="selected === 'home'"
+        (click)="selected = 'home'"
+        routerLink="/">
+          {{'app.title.short' | translate}}
+      </button>
+
+      @if (authService.isAuthenticated) {
+        <button
+          type="button"
+          class="btn btn-menu nav-item text-start"
+          [class.active]="selected === 'collection'"
+          (click)="selected = 'collection'"
+          routerLink="/collection">
+            {{ 'menu.collection' | translate }}
+        </button>
+      }
+    </div>
+
+    <div class="text-end">
+      @if (authService.isAuthenticated) {
+        <button
+          type="button"
+          class="btn btn-outline-info me-1 text-end"
+          [class.active]="selected === 'profile'"
+          routerLink="/profile"
+          (click)="selected = 'profile'">
+            <i class="bi bi-person-circle"></i> {{ 'menu.user.profile' | translate }}
+        </button>
+        <button type="button" class="btn btn-outline-danger me-1" (click)="logout()">{{ 'menu.user.logout' | translate }}</button>
+      } @else {
+        <button
+          type="button"
+          class="btn btn-menu me-1 text-end"
+          [class.active]="selected === 'login'"
+          (click)="selected = 'login'"
+          routerLink="/login">
+            {{ 'menu.user.login' | translate }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-menu me-1"
+          [class.active]="selected === 'register'"
+          (click)="selected = 'register'"
+          routerLink="/register">
+            {{ 'menu.user.register' | translate }}
+        </button>
+      }
+
+      <div
+        ngbDropdown
+        class="btn-group"
+        display="dynamic"
+        placement="bottom-end">
+        <button
+          type="button"
+          class="btn  btn-settings dropdown-toggle me-1"
+          id="languageDropdown"
+          ngbDropdownToggle>
+          <i class="bi bi-globe"></i>
+        </button>
+
+        <div
+          ngbDropdownMenu
+          aria-labelledby="languageDropdown">
+          <button
+            ngbDropdownItem
+            (click)="changeLanguage('pl')">
+            <span class="fi fi-pl"></span> Polski
+          </button>
+          <button
+            ngbDropdownItem
+            (click)="changeLanguage('en')">
+            <span class="fi fi-us"></span> English
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

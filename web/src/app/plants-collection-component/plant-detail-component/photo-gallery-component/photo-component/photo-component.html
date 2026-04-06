@@ -1,0 +1,9 @@
+<div class="card m-1" (click)="onClick()">
+  @if (photoUrl) {
+    <img
+      [src]="photoUrl"
+      class="card-img-top img-thumbnail"
+      [alt]="photo.title"
+      fill>
+  }
+</div>

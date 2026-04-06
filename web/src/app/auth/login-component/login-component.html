@@ -1,0 +1,65 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card col-12 col-md-6 col-lg-3">
+    <div class="card-header">
+      <span>
+        <h3 class="text-center mb-4">{{'loginPage.title' | translate}}</h3>
+      </span>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+        <div class="mb-3">
+          <label for="username" class="form-label">{{ 'loginPage.username.username' | translate }}</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            name="username"
+            required
+            [(ngModel)]="loginRequest.username"
+            #username="ngModel">
+          @if (username.invalid && username.touched) {
+            <div class="text-danger small">
+              {{ 'loginPage.username.isRequired' | translate }}
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">{{ 'loginPage.password.password' | translate }}</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            name="password"
+            required
+            [(ngModel)]="loginRequest.password"
+            #password="ngModel">
+          @if (password.invalid && password.touched) {
+            <div class="text-danger small">
+              {{ 'loginPage.password.isRequired' | translate }}
+            </div>
+          }
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-settings w-100"
+          [disabled]="loginForm.invalid">
+          {{ 'loginPage.login' | translate }}
+        </button>
+
+        <div class="text-end mt-3 me-3">
+          <button
+            type="button"
+            class="btn btn-link"
+            routerLink="/forgot-password">
+            {{ 'loginPage.forgotPassword.title' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

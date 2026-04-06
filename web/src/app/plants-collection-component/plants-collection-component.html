@@ -1,0 +1,39 @@
+<div class="container-fluid w-100">
+  @if (initialized) {
+    <div class="row w-100">
+      <app-localizations-component
+        [localizations]="localizationsWithoutPlants"
+        (localizationsChange)="localizationChange($event)"
+        (localizationUpdateOrCreate)="localizationUpdateOrCreate($event)"
+      (localizationRemove)="localizationRemove($event)">
+      </app-localizations-component>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        @if (selectedLocalization) {
+          <app-plants-list-component
+            [plants]="showPlants"
+            (plantsChange)="selectPlant($event)"
+            (createPlant)="createPlant($event)"
+            [localizationId]="selectedLocalization">
+          </app-plants-list-component>
+        }
+      </div>
+
+      <div class="col">
+        @if (selectedPlant) {
+          <app-plant-detail-component
+            [plant]="plant"
+            (plantAvatarChange)="onPlantAvatarChange($event)"
+            (plantUpdate)="onPlantUpdate($event)"
+            (removePlant)="onRemovePlant($event)"
+            (notesChange)="onNoteChange($event)">
+          </app-plant-detail-component>
+        }
+      </div>
+    </div>
+  } @else {
+    <span>{{'collections.loading' | translate}}</span>
+  }
+</div>

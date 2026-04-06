@@ -1,0 +1,22 @@
+<td>{{ note.noteDate | date:'dd.MM.yyyy HH:mm:ss' }}</td>
+<td>{{ note.editDate ? (note.editDate | date:'dd.MM.yyyy HH:mm:ss') : '---' }}</td>
+<td>{{ note.note }}</td>
+<td class="text-end">
+  <button
+    type="button"
+    class="btn btn-sm btn-edit me-1"
+    ngbTooltip="{{'collections.plants.details.notes.note.utility.edit' | translate}}"
+    placement="top"
+    (click)="editNote()">
+    <i class="bi bi-pencil"></i>
+  </button>
+  <button
+    type="button"
+    class="btn btn-sm btn-delete"
+    ngbTooltip="{{'collections.plants.details.notes.note.utility.delete' | translate}}"
+    placement="top"
+    (click)="deleteNote()">
+    <i class="bi bi-trash"></i>
+  </button>
+</td>
+

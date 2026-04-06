@@ -1,0 +1,139 @@
+<div class="modal-content rounded-3 shadow">
+  <div class="modal-header">
+    <h5 class="modal-title" id="addPlantModalLabel">
+      {{'collections.plants.addPlant' | translate}}
+    </h5>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="close()"
+      [attr.aria-label]="'collections.plants.modal.close' | translate">
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="name" class="form-label">{{ "collections.plants.details.name" | translate}}</label>
+            <input type="text" id="name" [(ngModel)]="plant.name" name="name" class="form-control">
+          </div>
+
+          <!-- Species -->
+          <div class="mb-3">
+            <label for="species" class="form-label">{{ "collections.plants.details.species" | translate}}</label>
+            <input type="text" id="species" [(ngModel)]="plant.species" name="species" class="form-control">
+          </div>
+
+          <!-- Purchase Date -->
+          <div class="mb-3">
+            <label for="purchaseDate" class="form-label">{{ "collections.plants.details.purchaseDate" | translate}}</label>
+            <input type="date" id="purchaseDate" [(ngModel)]="plant.purchaseDate" name="purchaseDate" class="form-control">
+          </div>
+
+          <!-- Purchase Localization -->
+          <div class="mb-3">
+            <label for="purchaseLocalization" class="form-label">{{ "collections.plants.details.purchaseLocalization" | translate}}</label>
+            <input type="text" id="purchaseLocalization" [(ngModel)]="plant.purchaseLocalization" name="purchaseLocalization" class="form-control">
+          </div>
+
+          <!-- Fertilization Date -->
+          <div class="mb-3">
+            <label for="fertilizationDate" class="form-label">{{ "collections.plants.details.fertilizationDate" | translate}}</label>
+            <input type="date" id="fertilizationDate" [(ngModel)]="plant.fertilizationDate" name="fertilizationDate" class="form-control">
+          </div>
+
+          <!-- Alive -->
+          <div class="form-check mb-3">
+            <input type="checkbox" id="alive" [(ngModel)]="plant.alive" name="alive" class="form-check-input">
+            <label for="alive" class="form-check-label">{{ "collections.plants.details.alive" | translate}}</label>
+          </div>
+
+          <!-- Shared -->
+          <div class="form-check mb-3">
+            <input type="checkbox" id="shared" [(ngModel)]="plant.shared" name="shared" class="form-check-input">
+            <label for="shared" class="form-check-label">{{ "collections.plants.details.shared" | translate}}</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- Watering Date -->
+          <div class="mb-3">
+            <label for="wateringDate" class="form-label">{{ "collections.plants.details.wateringDate" | translate}}</label>
+            <input type="date" id="wateringDate" [(ngModel)]="plant.wateringDate" name="wateringDate" class="form-control">
+          </div>
+
+          <!-- Death Reason -->
+          <div class="mb-3">
+            <label for="deathReason" class="form-label">{{ "collections.plants.details.deathReason" | translate}}</label>
+            <input type="text" id="deathReason" [(ngModel)]="plant.deathReason" name="deathReason" class="form-control">
+          </div>
+
+          <!-- Plant Condition -->
+          <div class="mb-3">
+            <label for="plantCondition" class="form-label">{{ "collections.plants.details.plantCondition" | translate}}</label>
+            <select id="plantCondition" [(ngModel)]="plant.plantCondition" name="plantCondition" class="form-select">
+              @for (condition of plantConditions; track condition) {
+                <option [value]="condition">{{`collections.plants.details.plantConditionValues.${condition}` | translate}}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Plant Soil -->
+          <div class="mb-3">
+            <label for="plantSoil" class="form-label">{{ "collections.plants.details.plantSoil" | translate}}</label>
+            <select id="plantSoil" [(ngModel)]="plant.plantSoil" name="plantSoil" class="form-select">
+              @for (soil of plantSoil; track soil) {
+                <option [value]="soil">{{`collections.plants.details.plantSoilValues.${soil}` | translate}}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Plant Watering -->
+          <div class="mb-3">
+            <label for="plantWatering" class="form-label">{{ "collections.plants.details.plantWatering" | translate}}</label>
+            <select id="plantWatering" [(ngModel)]="plant.plantWatering" name="plantWatering" class="form-select">
+              @for (watering of plantWatering; track watering) {
+                <option [value]="watering">{{`collections.plants.details.plantWateringValues.${watering}` | translate}}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Plant Berth -->
+          <div class="mb-3">
+            <label for="plantBerth" class="form-label">{{ "collections.plants.details.plantBerth" | translate}}</label>
+            <select id="plantBerth" [(ngModel)]="plant.plantBerth" name="plantBerth" class="form-select">
+              @for (berth of plantBerth; track berth) {
+                <option [value]="berth">{{`collections.plants.details.plantBerthValues.${berth}` | translate}}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Plant Toxicity -->
+          <div class="mb-3">
+            <label for="plantToxicity" class="form-label">{{ "collections.plants.details.plantToxicity" | translate}}</label>
+            <select id="plantToxicity" [(ngModel)]="plant.plantToxicity" name="plantToxicity" class="form-select">
+              @for (toxicity of plantToxicity; track toxicity) {
+                <option [value]="toxicity">{{`collections.plants.details.plantToxicityValues.${toxicity}` | translate}}</option>
+              }
+            </select>
+          </div>
+
+          <!-- Plant Life Expectancy -->
+          <div class="mb-3">
+            <label for="plantLifeExpectancy" class="form-label">{{ "collections.plants.details.plantLifeExpectancy" | translate}}</label>
+            <select id="plantLifeExpectancy" [(ngModel)]="plant.plantLifeExpectancy" name="plantLifeExpectancy" class="form-select">
+              @for (lifeExpectancy of plantLifeExpectancy; track lifeExpectancy) {
+                <option [value]="lifeExpectancy">{{`collections.plants.details.plantLifeExpectancyValues.${lifeExpectancy}` | translate}}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="close()">{{'collections.plants.modal.cancel' | translate}}</button>
+      <button type="submit" class="btn btn-action" (click)="save()">{{'collections.plants.modal.save' | translate}}</button>
+    </div>
+
+</div>

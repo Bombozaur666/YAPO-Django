@@ -1,0 +1,38 @@
+<div class="modal-wrapper" (click)="close()">
+  <div class="custom-modal-content" (click)="$event.stopPropagation()">
+    <div class="photo-container flex-grow-1 d-flex align-items-center justify-content-center position-relative">
+      <button type="button"
+              class="nav-arrow left-arrow"
+              aria-label="{{'collections.plants.details.photoGallery.fullPhoto.prevPhoto' | translate}}"
+              (click)="photoSlide('prev')">
+        <span><i class="bi bi-chevron-double-left"></i></span>
+      </button>
+
+      <img [src]="photoUrl"
+           alt="photo"
+           class="main-photo">
+
+      <button type="button"
+              class="nav-arrow right-arrow"
+              aria-label="{{'collections.plants.details.photoGallery.fullPhoto.nextPhoto' | translate}}"
+              (click)="photoSlide('next')">
+        <span><i class="bi bi-chevron-double-right"></i></span>
+      </button>
+    </div>
+
+    <div class="p-3 custom-modal-details">
+      <h5><strong>{{'collections.plants.details.photoGallery.fullPhoto.title' | translate}}</strong> {{ photo.title }}</h5>
+      <p><strong>{{'collections.plants.details.photoGallery.fullPhoto.date' | translate}}</strong> {{ photo.date | date:'dd.MM.yyyy' }}</p>
+      <p><strong>{{'collections.plants.details.photoGallery.fullPhoto.creationDate' | translate}}</strong> {{ photo.createdAt | date:'dd.MM.yyyy hh:mm:ss' }}</p>
+      <p><strong>{{'collections.plants.details.photoGallery.fullPhoto.description' | translate}}</strong> {{ photo.description }}</p>
+
+      <div class="mt-4 d-flex flex-column gap-2">
+        <button class="btn btn-secondary" (click)="close()">{{'collections.plants.details.photoGallery.fullPhoto.close' | translate}}</button>
+        @if (editing) {
+          <button class="btn btn-delete" (click)="delete()">{{'collections.plants.details.photoGallery.fullPhoto.deletePhoto' | translate}}</button>
+        }
+        <button class="btn btn-success" (click)="download()">{{'collections.plants.details.photoGallery.fullPhoto.downloadPhoto' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

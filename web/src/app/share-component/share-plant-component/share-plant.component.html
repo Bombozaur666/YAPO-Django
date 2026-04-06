@@ -1,0 +1,23 @@
+<div class="w-75 mx-auto">
+  @if (loading) {
+    {{'fetching' | translate }}
+  } @else {
+    @if (plant) {
+      <app-main-body-component
+        [plant]="plant"
+        [editMode]="false">
+      </app-main-body-component>
+
+      <app-comments-component
+        [plantId]="plant.id"
+        [plantComments]="plant.comments">
+      </app-comments-component>
+
+      <app-photo-gallery-component
+        [editing] = false
+        [plantId]="plant.id"
+        [photoGallery]="plant.photoGallery">
+      </app-photo-gallery-component>
+    }
+  }
+</div>

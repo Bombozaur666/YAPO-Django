@@ -1,0 +1,28 @@
+<div class="card mt-5">
+  <div class="card-header">
+    <h3>
+      {{'collections.plants.details.photoGallery.title' | translate }}
+      @if (editing) {
+        <button
+          type="button"
+          class="btn btn-sm btn-action m-1 float-end"
+          (click)="uploadPhoto()">
+          {{'collections.plants.details.photoGallery.addPhoto' | translate }}
+        </button>
+      }
+    </h3>
+  </div>
+  <div class="card-body photo-gallery">
+    @for (photo of photoGallery; track photo.id) {
+      <app-photo-component
+        [photo]="photo"
+        [editing] = editing
+        [plantId]="plantId"
+        (photoSlide)="onPhotoSlide($event)"
+        (photoRemove)="onPhotoRemove($event)">
+      </app-photo-component>
+    } @empty {
+      {{'collections.plants.details.photoGallery.noPhotos' | translate }}
+    }
+  </div>
+</div>

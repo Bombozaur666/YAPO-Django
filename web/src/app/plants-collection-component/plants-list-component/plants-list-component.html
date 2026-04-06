@@ -1,0 +1,24 @@
+<div class="plants w-100">
+  <div class="row mb-2 mt-2">
+    <div class="col-12">
+      <button
+        type="button"
+        class="btn btn-action w-100"
+        (click)="addPlant()">
+          {{'collections.plants.addPlant' | translate}}
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+  @for (plant of plants; track plant.id) {
+    <div class="col-6 mb-2">
+      <app-plant-component
+        [plant]="plant"
+        [selectedPlant]="selectedPlant"
+        (plantsChange)="selectPlant($event)">
+      </app-plant-component>
+    </div>
+  }
+  </div>
+</div>

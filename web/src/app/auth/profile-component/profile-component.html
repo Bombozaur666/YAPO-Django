@@ -1,0 +1,46 @@
+<div class="container-fluid mt-4 w-100">
+  <div class="card shadow-sm">
+    <div class="card-header">
+      <h4 class="mb-0">{{ 'profile.profile' | translate }}</h4>
+    </div>
+    @if (user){
+      <div class="card-body">
+        <div class="row">
+          <div class="col-7">
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">{{ 'profile.username' | translate }}</div>
+              <div class="col-sm-8">{{ user.username }}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">{{ 'profile.email' | translate }}</div>
+              <div class="col-sm-8">{{ user.email }}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-4 fw-bold">{{ 'profile.registrationDate' | translate }}</div>
+              <div class="col-sm-8">{{ user.registrationDate | date:'dd.MM.yyyy' }}</div>
+            </div>
+          </div>
+          <div class="col-5">
+              <img [src]="avatarUrl"
+                   class="img-thumbnail rounded-circle float-end avatar"
+                   alt="{{ 'profile.settings.avatarAlt' | translate }}">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <button
+          type="button"
+          class="btn btn-action"
+          (click)="onAvatarEdit()">
+            {{'profile.settings.editAvatar' | translate}}
+        </button>
+      </div>
+    } @else {
+      <div class="row mb-3">
+        <div class="col-sm-4 fw-bold">{{ 'fetching' | translate }}</div>
+      </div>
+    }
+  </div>
+</div>
+

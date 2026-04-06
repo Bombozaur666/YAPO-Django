@@ -1,0 +1,112 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --main-secondary-color: #93B1A6;
+  --main-active-color: #008170;
+
+
+  --menu-header-color: #0c2d2d;
+  --app-bg-color: #183D3D;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --in-case-pink: #BD18DAFF;
+
+  --action-button: rgb(5, 197, 230);
+  --cancel-button: #112022;
+  --menu-button: #ffc107;
+  --table-higlite: #33a89b;
+}
+
+.body {
+  background-color: var(--app-bg-color);
+}
+
+.btn-round {
+  border-radius: 50% !important;
+}
+
+.btn-menu {
+  color: var(--menu-button) !important;
+  outline: var(--menu-button) !important;
+  border: 1px solid var(--menu-button) !important;
+}
+
+.btn-menu.active {
+  background-color: var(--menu-button) !important;
+  color: var(--color-black) !important;
+  outline: var(--menu-button) !important;
+}
+
+.btn-settings {
+  background-color: var(--main-active-color) !important;
+  outline: var(--main-active-color) !important;
+  color: var(--color-white) !important;
+}
+
+.btn-delete {
+  background-color: #112022 !important;
+  color: var(--color-white) !important;
+  outline: var(--color-white);
+}
+
+.btn-settings:disabled {
+  border: 0;
+}
+
+.btn-list {
+  margin: 3px;
+  background-color: var(--main-secondary-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-action {
+  background-color: var(--action-button) !important;
+  color: var(--color-black) !important;
+}
+
+.btn-edit {
+  color: var(--app-bg-color) !important;
+  outline:  var(--app-bg-color) !important;
+}
+
+.btn-list.active {
+  background-color: var(--main-active-color) !important;
+  color: var(--color-white) !important;
+  border: 1px solid transparent !important;
+}
+
+.btn-menu {
+  background-color: var(--main-active-color);
+  outline: var(--main-active-color);
+}
+
+.btn-edit:hover {
+  background-color: #a0dc7f26 !important;
+}
+
+.btn-list:hover {
+  background-color: var(--main-active-color) !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.icon-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-hover .icon-fill {
+  display: none;
+}
+
+.icon-hover:hover .icon-fill {
+  display: inline;
+  color: #ffffff;
+}
+
+.icon-hover:hover .icon-empty {
+  display: none;
+}

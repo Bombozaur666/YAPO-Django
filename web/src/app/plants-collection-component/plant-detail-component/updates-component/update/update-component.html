@@ -1,0 +1,27 @@
+@if(dateFields.includes(update.fieldName)) {
+  <td>{{`collections.plants.details.${update.fieldName}` | translate}}</td>
+  <td>{{update.oldValue === 'null' ? '---' : (update.oldValue | date:'dd.MM.yyyy')}}</td>
+  <td>{{update.newValue | date:'dd.MM.yyyy'}}</td>
+}
+
+@else if (choiceFields.includes(update.fieldName)) {
+  <td>{{ `collections.plants.details.${update.fieldName}` | translate}}</td>
+  <td>{{ `collections.plants.details.${update.fieldName}Values.${update.oldValue}` | translate}}</td>
+  <td>{{ `collections.plants.details.${update.fieldName}Values.${update.newValue}` | translate}}</td>
+}
+
+@else if (boolFields.includes(update.fieldName)) {
+  <td>{{ `collections.plants.details.${update.fieldName}` | translate}}</td>
+  <td>{{ `collections.plants.details.${update.oldValue}` | translate}}</td>
+  <td>{{ `collections.plants.details.${update.newValue}` | translate}}</td>
+}
+
+@else {
+  <td>{{ `collections.plants.details.${update.fieldName}` | translate}}</td>
+  @if (update.oldValue == 'null') {
+    <td></td>
+  } @else {
+    <td>{{update.oldValue}}</td>
+  }
+  <td>{{update.newValue}}</td>
+}
