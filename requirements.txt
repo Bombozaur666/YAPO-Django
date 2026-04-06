@@ -1,0 +1,10 @@
+django>=6.0 
+django-celery-beat
+django-celery-results
+django-cors-headers
+djangorestframework
+httpx
+pre-commit 
+psycopg2-binary
+celery
+redis
