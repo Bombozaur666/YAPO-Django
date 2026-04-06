@@ -1,7 +1,7 @@
 services:
-  postgres:
+  yapo-postgres:
     image: postgres:18.3-alpine
-    container_name: "django6-postgres"
+    container_name: "YAPO-postgres"
     restart: always
     ports:
       - "${POSTGRES_EXPOSED_HOST:-127.0.0.1}:${POSTGRES_EXPOSED_PORT:-54323}:${POSTGRES_PORT:-5432}"
@@ -17,20 +17,20 @@ services:
         ]
       interval: 5s
       timeout: 1s
-      retries: 10
+      retries: 11
     volumes:
-      - django6-database-data:/var/lib/postgresql/data
+      - yapo-postgres-data:/var/lib/postgresql/data
 
-  redis:
+  yapo-redis:
     image: "redis:alpine"
-    container_name: redis
+    container_name: YAPO-redis
     healthcheck:
       test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
       interval: 5s
       timeout: 1s
       retries: 10
 
-  django:
+  yapo-django:
     restart: unless-stopped
     build:
       context: .
@@ -40,9 +40,9 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      redis:
+      yapo-redis:
         condition: service_healthy
-      postgres:
+      yapo-postgres:
         condition: service_healthy
     env_file:
       - ./env/django.env
@@ -50,41 +50,41 @@ services:
       - ./env/cache.env
       - ./env/celery.env
     command: "/bin/sh -c 'python3 manage.py runserver 0.0.0.0:8000'"
-    container_name: django
+    container_name: YAPO-django
 
-  celery-worker:
+  yapo-celery-worker:
     restart: unless-stopped
     build:
       context: .
       dockerfile: dockerfiles/django.dockerfile
-    command: celery -A main worker -l info
+    command: celery -A YAPO worker -l info
     volumes:
       - ./src:/usr/src/app:rw
     depends_on:
-      - django
+      - yapo-django
     env_file:
       - ./env/django.env
       - ./env/db.env
       - ./env/cache.env
       - ./env/celery.env
-    container_name: celery-worker
+    container_name: YAPO-celery-worker
 
-  celery-beat:
+  yapo-celery-beat:
     restart: unless-stopped
     build:
       context: .
       dockerfile: dockerfiles/django.dockerfile
-    command: celery -A main beat -l info
+    command: celery -A YAPO beat -l info
     volumes:
       - ./src:/usr/src/app:rw
     depends_on:
-      - django
+      - yapo-django
     env_file:
       - ./env/django.env
       - ./env/db.env
       - ./env/cache.env
       - ./env/celery.env
-    container_name: celery-beat
+    container_name: YAPO-celery-beat
 
 volumes:
-  django6-database-data:
+  yapo-postgres-data:
